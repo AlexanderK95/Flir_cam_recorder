@@ -1,0 +1,21 @@
+# Property Configurator for Spinnaker library
+
+log4cpp.rootCategory=ERROR, rootAppender
+log4cpp.category.SpinnakerConsole=ERROR, rootAppender
+log4cpp.category.Spinnaker=ERROR, Spinnaker
+
+log4cpp.appender.rootAppender=ConsoleAppender
+log4cpp.appender.rootAppender.layout=PatternLayout
+log4cpp.appender.rootAppender.layout.ConversionPattern=[%p %c] %d [%t] %m%n
+
+log4cpp.appender.Spinnaker=RollingFileAppender
+log4cpp.appender.Spinnaker.fileName=$(ALLUSERSPROFILE)\Spinnaker\Shared\Logs\Spinnaker.log
+log4cpp.appender.Spinnaker.append=true
+log4cpp.appender.Spinnaker.maxFileSize=1000000
+log4cpp.appender.Spinnaker.maxBackupIndex=5
+log4cpp.appender.Spinnaker.layout=PatternLayout
+log4cpp.appender.Spinnaker.layout.ConversionPattern=[%p %c] %d [%t] %m%n
+
+# Compression applies when maxFileSize is reached and log will be split up depending on maxBackupIndex specified
+# Note: Compression takes some time depending on the maxFileSize specified so use with caution for time sensitive applications
+log4cpp.appender.Spinnaker.compression=false

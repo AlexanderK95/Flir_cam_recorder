@@ -1,0 +1,20 @@
+# Property Configurator for SpinnakerNET wrapper
+
+log4cpp.rootCategory=DEBUG, rootAppender
+log4cpp.category.SpinnakerNET=DEBUG, SpinnakerNET
+
+log4cpp.appender.rootAppender=ConsoleAppender
+log4cpp.appender.rootAppender.layout=PatternLayout
+log4cpp.appender.rootAppender.layout.ConversionPattern=[%p] %d [%t] %m%n
+
+log4cpp.appender.SpinnakerNET=RollingFileAppender
+log4cpp.appender.SpinnakerNET.fileName=$(ALLUSERSPROFILE)\Spinnaker\Shared\Logs\SpinnakerNET.log
+log4cpp.appender.SpinnakerNET.append=true
+log4cpp.appender.SpinnakerNET.maxFileSize=1000000
+log4cpp.appender.SpinnakerNET.maxBackupIndex=5
+log4cpp.appender.SpinnakerNET.layout=PatternLayout
+log4cpp.appender.SpinnakerNET.layout.ConversionPattern=[%p] %d [%t] %m%n
+
+# Compression applies when maxFileSize is reached and log will be split up depending on maxBackupIndex specified
+# Note: Compression takes some time depending on the maxFileSize specified so use with caution for time sensitive applications
+log4cpp.appender.SpinnakerNET.compression=false
