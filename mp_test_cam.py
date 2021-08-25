@@ -107,7 +107,7 @@ if __name__ == '__main__':
     print('[INFO] Initiating primary camera')
     cam_prime = primary.PrimaryCamera(str(sn_list[0]))
     cam_prime.framerate = fps   
-    cam_prime.prime(f'data/test_cam1_{date}.mp4')
+    cam_prime.prime(f'data/test_cam0_{sn_list[0]}_{date}.mp4')
 
     print('[INFO] Initiating secondary cameras (if any)')
     sec_cams = {}
